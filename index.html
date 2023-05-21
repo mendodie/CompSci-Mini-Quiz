@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Scuffed Wordle</title>
+</head>
+<body>
+    
+    <div class="wrapper"> 
+        <section class="question" id = 'questions'> 
+            0
+        </section>
+        &nbsp;
+        <section class="guesses">
+            <div class="row1">
+                <input class = "guess-row" type ="text" id="textInput1">
+            </div>
+            <div class="row2">
+                <input class = "guess-row" type ="text" id="textInput2">
+            </div>
+            <div class="row2">
+                <input class = "guess-row" type ="text" id="textInput3">
+            </div> 
+            <div class="row2">
+                <input class = "guess-row" type ="text" id="textInput4">
+            </div> 
+            <div class="row2">
+                <input class = "guess-row" type ="text" id="textInput5">
+            </div>
+            <div class="row2">
+                <input class = "guess-row" type ="text" id="textInput6">
+            </div> 
+        </section>
+        <section class="letter-buttons">
+
+            <div class="letter-button-row">
+                <button class="letter-button" value = "Q" id="qButton"  onclick="changeValue(id)">
+                    Q
+                </button>
+                <button class="letter-button" value = "W" id="wButton"   onclick="changeValue(id)">
+                    W
+                </button>
+                <button class="letter-button" value = "E" id="eButton" onclick="changeValue(id)">
+                    E
+                </button>
+                <button class="letter-button" value = "R" id="rButton" onclick="changeValue(id)">
+                    R
+                </button>
+                <button class="letter-button" value = "T" id="tButton" onclick="changeValue(id)">
+                    T
+                </button>
+                <button class="letter-button"  value = "Y" id="yButton" onclick="changeValue(id)">
+                    Y
+                </button>
+                <button class="letter-button" value = "U" id="uButton" onclick="changeValue(id)">
+                    U
+                </button>
+                <button class="letter-button" value = "I" id="iButton" onclick="changeValue(id)">
+                    I
+                </button>
+                <button class="letter-button" value = "O" id="oButton" onclick="changeValue(id)">
+                    O
+                </button>
+                <button class="letter-button" value = "P" id="pButton" onclick="changeValue(id)">
+                    P
+                </button>
+            </div>
+            <div class="letter-button-row">
+                <button class="letter-button" value = "A" id="aButton" onclick="changeValue(id)">
+                    A
+                </button>
+                <button class="letter-button" value = "S" id="sButton" onclick="changeValue(id)">
+                    S
+                </button>
+                <button class="letter-button" value = "D" id="dButton" onclick="changeValue(id)">
+                    D
+                </button>
+                <button class="letter-button" value = "F" id="fButton" onclick="changeValue(id)">
+                    F
+                </button>
+                <button class="letter-button" value = "G" id="gButton" onclick="changeValue(id)">
+                    G
+                </button>
+                <button class="letter-button" value = "H" id="hButton" onclick="changeValue(id)">
+                    H
+                </button>
+                <button class="letter-button" value = "J" id="jButton" onclick="changeValue(id)">
+                    J
+                </button>
+                <button class="letter-button" value = "K" id="kButton" onclick="changeValue(id)">
+                    K
+                </button>
+                <button class="letter-button" value = "L" id="lButton" onclick="changeValue(id)">
+                    L
+                </button>
+            </div>
+            <div class="letter-button-row">
+                <button class="letter-button double" value = "Enter" id="enterButton" onclick="changeValue(id)">
+                    Enter
+                </button>
+                <button class="letter-button" value = "Z" id="zButton" onclick="changeValue(id)">
+                    Z
+                </button>
+                <button class="letter-button" value = "X" id="xButton" onclick="changeValue(id)">
+                    X
+                </button>
+                <button class="letter-button" value = "C" id="cButton" onclick="changeValue(id)">
+                    C
+                </button>
+                <button class="letter-button" value = "V" id="vButton" onclick="changeValue(id)">
+                    V
+                </button>
+                <button class="letter-button" value = "B" id="bButton" onclick="changeValue(id)">
+                    B
+                </button>
+                <button class="letter-button" value = "N" id="nButton" onclick="changeValue(id)">
+                    N
+                </button>
+                <button class="letter-button" value = "M" id="mButton" onclick="changeValue(id)">
+                    M
+                </button>
+                <button class="letter-button" value = "&larr" id="backButton" onclick="changeValue(id)">
+                    &larr;
+                </button>
+            </div>
+            <div class="letter-button-row">
+                <button class="letter-button-triple" value = "&nbsp" id="spaceButton" onclick="changeValue(id)">
+                    &nbsp;
+                </button>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

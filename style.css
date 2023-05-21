@@ -1,0 +1,122 @@
+html{
+    box-sizing: border-box;
+    height: 100%;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+body{
+    align-items: center;
+    background: linear-gradient(320deg, blue, lightblue, #63c9b4);
+    display: flex;
+    font-family: 'Dosis', sans-serif;
+    font-display: swap;
+    height: inherit;
+    justify-content: center;
+
+
+}
+.wrapper{
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 16px;
+    color: #232323;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    flex-basis: 400px;
+    height: auto;
+    padding: 5px 10px;
+}
+.question{
+    display:flexbox;
+    justify-content: space-between;
+    margin: .5% 0;
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(174, 247, 235, 0.75);
+    border: 1px solid rgba(35, 35, 35, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    font-size: 35px;
+    overflow: auto;
+    padding: 7px;
+    text-align: center;
+    width: auto;
+}
+.guess-row{
+    display:flexbox;
+    justify-content: space-between;
+    margin: .6% 0;
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255,255,255,0.75);
+    border: 1px solid rgba(35, 35, 35, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    font-size: 50px;
+    overflow: auto;
+    padding: 3px;
+    text-align: center;
+    width: auto;
+}
+.letter-button-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 0;
+}
+.letter-button{
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255,255,255,0.75);
+    border: 1px rgba(35, 35, 35, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    flex-basis: 20%;
+    font-family: inherit;
+    font-size: 40px;
+    height: 50px;
+    width: 40px;
+}
+.letter-button-triple{
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255,255,255,0.75);
+    border: 1px rgba(35, 35, 35, 0.01);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    flex-basis: 100%;
+    font-family: inherit;
+    font-size: 40px;
+    height: 55px;
+    width: auto;
+    margin-bottom: -5px;
+}
+.letter-button-triple:hover{
+    background-color: inherit;
+    color: inherit;
+}
+.letter-button-triple:active{
+    background-color: #9fd7ed;
+}
+.letter-button:hover{
+    background-color: inherit;
+    color: inherit;
+}
+.letter-button:active{
+    background-color: #9fd7ed;
+
+
+}
+.double{
+    font-size: 15px;
+}
