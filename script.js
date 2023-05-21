@@ -7,18 +7,21 @@ let prevoius = '';
 let full = '';
 let question1 = "What is the name of the number system computer's use?"
 let question2 = "What is the name of the search method that repeatedly divides the list in half until item found?"
-let question3 = "";
-let question4 = "";
-let question5 = "";
-let question6 = "";
+let question3 = "What is the name of the function that only returns True or False?";
+let question4 = "What is the name of the numbering system with base-16?";
+let question5 = "What is the name of the search method that goes through every element?";
+let question6 = "What type of compression doesn't lose information when compressed?";
+let question7 = "What type of compression does lose information when compressed?"
 let answer1 = "BINARY"
-let answer2 = "BINARY_SEARCH"
-let answer3 = "";
-let answer4 = "";
-let answer5 = "";
-let answer6 = "";
+let answer2 = "BINARY-SEARCH"
+let answer3 = "BOOLEAN-Function";
+let answer4 = "HEXADECIMAL";
+let answer5 = "LINEAR-SEARCH";
+let answer6 = "LOSSLESS-COMPRESSION";
+let answer7 = "LOSSY-COMPRESSION"
 let whichQuestion = 1;
 let xyz = '';
+let incorrect = 0;
 function reset(){
   textField = document.getElementById('textInput1')
   textField.value = '';
@@ -51,8 +54,10 @@ function questionNumber(x){
     return question4;
   }else if(x === 5){
     return question5;
-  }else{
+  }else if(x ===6){
     return question6;
+  }else{
+    return question7;
   }
 }
 function guessesNumbers(x){
@@ -72,13 +77,13 @@ function guessesNumbers(x){
   return guessNumber;
 }
 function changeValue(input) {
-  if(guesses < 7){
+  if(guesses <= 7){
   guessNumber = guessesNumbers(guesses);
   textField = document.getElementById(guessNumber);
   prevoius = full;
   guess = document.getElementById(input).value;
   question = questionNumber(whichQuestion)
-  document.getElementById('questions').innerHTML = full;
+  document.getElementById('questions').innerHTML = question;
   if(guess === '&larr'){
     prevoius = full.substring(0, full.length - 1)
     full = prevoius
@@ -86,10 +91,8 @@ function changeValue(input) {
 
   }else if(guess === 'Enter'){
     textField.value = textField.value
-    if(full.includes('%nbsp;')){
-      full = replace(full);
-    }
-    xyz = check(full,whichQuestion)
+    xyz = check1(full,whichQuestion)
+    whichQuestion = check2(full,whichQuestion)
     if(xyz === true){
       textField.value = "Correct!"
       guesses = 1;
@@ -98,43 +101,67 @@ function changeValue(input) {
     textField.style.backgroundColor = "red";
     full = ''
     guesses += 1;
+    if(guesses === 7){
+      textField.value = "Incorrect!"
+      delay1()
+      whichQuestion += 1
+      guesses = 1
+
+    }
     } else{
       guesses = guesses
     }
-  }else if(guess === "&nbsp"){
-    full += "\\";
-    textField.value += "\\";
   }else{
-  full = full + guess;
+  full += guess
   textField.value += guess
   }
 }
 }
 
-function isLetter(str) {
-  return str.length === 1 && str.match(/[a-z]/i);
-}
-
-function check(gus,num){
+function check1(gus,num){
   if (num === 1 && gus === answer1){
     whichQuestion += 1;
     return true;
-  }   if (num === 2 && gus === answer2){
+  }else   if (num === 2 && gus === answer2){
     whichQuestion += 1;
     return true;
-  }   if (num === 3 && gus === answer3){
+  }else   if (num === 3 && gus === answer3){
     whichQuestion += 1;
     return true;
-  }   if (num === 4 && gus === answer4){
+  }else  if (num === 4 && gus === answer4){
     whichQuestion += 1;
     return true;
-  }   if (num === 5 && gus === answer5){
+  }else   if (num === 5 && gus === answer5){
     whichQuestion += 1;
     return true;
-  }   if (num === 6 && gus === answer6){
+  }else   if (num === 6 && gus === answer6){
     return true;
-  } else{
+  } else if (num === 7 && gus === answer7){
+    return true;
+  }else{
     return false;
+  }
+}
+function check2(gus,num){
+  if (num === 1 && gus === answer1){
+    whichQuestion += 1;
+    return whichQuestion;
+  }else   if (num === 2 && gus === answer2){
+    whichQuestion += 1;
+    return whichQuestion;
+  }else   if (num === 3 && gus === answer3){
+    whichQuestion += 1;
+    return whichQuestion;
+  }else  if (num === 4 && gus === answer4){
+    whichQuestion += 1;
+    return whichQuestion;
+  }else   if (num === 5 && gus === answer5){
+    whichQuestion += 1;
+    return whichQuestion;
+  }else   if (num === 6 && gus === answer6){
+    return whichQuestion;
+  } else{
+    return whichQuestion;
   }
 }
 
@@ -146,13 +173,15 @@ async function delay(){
   prevoius = '';
   reset()
 }
+async function delay1(){
+  textField.style.backgroundColor = "red";
+  textField.value = "Incorrect!"
+  await sleep(2000);
+  full = '';
+  prevoius = '';
+  reset()
+  
+}
 function sleep(ms){
   return new Promise(resolve => setTimeout(resolve,ms));
-}
-function replace(x){
-  xy = x.indexOf('&nbsp;')
-  x1 = x.substring(0, xy - 1)
-  x2 = x.substring(xy + 1, x.length)
-  x = x1.concat('_', x2)
-  return x;
 }
